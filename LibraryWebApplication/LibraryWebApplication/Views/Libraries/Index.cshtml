@@ -1,0 +1,94 @@
+﻿@model IEnumerable<LibraryWebApplication.Models.Library>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #6c499a;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #da17e2;
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color: #e0d1f3;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.borrowed_book)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.total_nr_of_books)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.return_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.message_id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.borrowed_book)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_nr_of_books)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.return_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.message_id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.library_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.library_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.library_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

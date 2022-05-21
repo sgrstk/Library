@@ -1,0 +1,71 @@
+﻿@model LibraryWebApplication.Models.AuthorBook
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #6c499a;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #da17e2;
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color: #e0d1f3;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<div>
+    <h4>AuthorBook</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.author_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.author_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.book_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.book_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

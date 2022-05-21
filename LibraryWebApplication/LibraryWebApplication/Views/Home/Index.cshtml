@@ -1,0 +1,140 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    <style>
+
+        h3 {
+            color: black;
+            font-size: 85px;
+        }
+
+        button {
+            width: 180px;
+            color: #000;
+            font-size: 12px;
+            padding: 12px 0;
+            background: #fff;
+            border: 0;
+            border-radius: 20px;
+            outline: none;
+            margin-top: 30px;
+        }
+
+
+        #buton {
+            background-color: green;
+            color: white;
+            font-weight: bold;
+        }
+
+
+            #buton:hover {
+                background-color: blue;
+                color: white;
+                font-weight: bold;
+                transform: translateY(5px);
+            }
+
+        .p {
+            width: 200px;
+            height: 220px;
+            display: inline-block;
+            border-radius: 20px;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 3px;
+            transition: transform 0.5s;
+            background-position: center;
+	        background-size: 210px;
+        }
+
+        .center {
+            float: right;
+            z-index: 1;
+            padding-right: 30px;
+        }
+
+        .center1 {
+            z-index: 2;
+            
+        }
+
+        .col{
+	      flex-basis: content;
+        }
+
+        .row{
+	       display: flex;
+	       height: 88%;
+	       align-items: center;
+        }
+
+        .p:hover {
+            transform: translateY(-9px);
+            opacity: 0.9;
+        }
+
+        .display-4 {
+            font-family: 'Pattaya', sans-serif;
+        }
+        .display {
+            font-family: 'Pattaya', sans-serif;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: green;
+            color: green;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: green;
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color:#92a8d1 ;
+            padding: 10px;
+        }
+         body { 
+        
+        background-position: center;
+        background-image: url("https://factory360.com/wp-content/uploads/2015/09/bigstock-open-book-83012912.jpg"); background-size: cover; }
+
+    </style>
+</head>
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

@@ -1,0 +1,108 @@
+﻿@model LibraryWebApplication.Models.Contact
+
+@{
+    ViewData["Title"] = "Create";
+}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #6c499a;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: #da17e2;
+            }
+
+        .container {
+            border-radius: 5px;
+            background-color: #92a8d1;
+            padding: 10px;
+        }
+    </style>
+</head>
+<h4>Contactati-ne</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="first_name" class="control-label"></label>
+                <input asp-for="first_name" id="firstNamePopup" class="form-control"  placeholder="Introdu nume" />
+                <span asp-validation-for="first_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="last_name" class="control-label"></label>
+                <input asp-for="last_name" id="lastNamePopup" class="form-control" placeholder="Introdu prenume" />
+                <span asp-validation-for="last_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label"></label>
+                <input asp-for="email" id="emailPopup" class="form-control" placeholder="Introdu email" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="subject" class="control-label"></label>
+                <input asp-for="subject" id="subjectPopup" class="form-control" placeholder="Scrie aici mesajul"/>
+                <span asp-validation-for="subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script> 
+    function submitPopup(){
+
+        let textFirst=document.getElementById('firstNamePopup').value;
+        let textLast=document.getElementById('lastNamePopup').value;
+        let textEmail=document.getElementById('emailPopup').value;
+        let textSubject=document.getElementById('subjectPopup').value;
+
+        try{
+            if(textFirst==="") throw "The first name does not exist!!!";
+            else if(textLast==="") throw "The last name does not exist!!!";
+            else if(textEmail==="") throw "The email does not exist!!!";
+            else if(textSubject==="") throw "The subject does not exist!!!";
+
+        }catch(e){
+          alert(e);
+          return false;
+       }
+}
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
